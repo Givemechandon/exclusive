@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: var(--cor-de-fundo);
+    background-image: url(/assets/fundo.jpg);
 }
 
 .container {
