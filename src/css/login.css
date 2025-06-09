@@ -1,0 +1,86 @@
+:root {
+    --cor-de-fundo: #825e36;
+}
+
+body {
+    background-color: var(--cor-de-fundo);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: row-reverse;
+    left: 7%;
+    position: relative;
+}
+
+.container .logo img {
+    width: 700px;
+    height: auto;
+}
+
+.container .login-box {
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background-color: rgba(255, 255, 255, 0.08);
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.textbox {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.textbox input {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #f1f1f1;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.textbox input:focus {
+  outline: none;
+  background-color: #e0e0e0;
+  box-shadow: 0 0 0 2px #5d4726;
+}
+
+.btn {
+  padding: 12px;
+  width: 100%;
+  background-color: #5d4726;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #7a6443;
+  transform: scale(1.02);
+}
+
+.reserved {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #fff;
+    font-size: 12px;
+    opacity: 0.7;
+    right: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+    width: fit-content;
+}
