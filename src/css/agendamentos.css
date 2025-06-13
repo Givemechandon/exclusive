@@ -1,0 +1,302 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+
+
+:root {
+  --cor-primaria: #8b6e52;
+  --cor-secundaria: #a98c6f;
+  --texto-claro: #f9f6f1;
+  --texto-escuro: #3b2f2f;
+  --cinza-claro: #d7cfc3;
+  --sombra-dark: rgba(0, 0, 0, 0.25);
+  --sombra-light: rgba(255, 255, 255, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-image: url(/assets/fundo.jpg);
+  color: var(--texto-claro);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  transition: transform 0.6s ease;
+}
+
+header .logo img:hover {
+  transform: scale(1.1);
+}
+
+header nav ul {
+  list-style: none;
+  align-items: center;
+  display: flex;           
+  flex-direction: row;     
+  gap: 18px;          
+  padding: 0;
+  margin: 20px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.4s ease;
+  padding: 10px 16px;
+  border-radius: 8px;            
+}
+
+header nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.container {
+  flex: 1;
+  display: flex;
+  gap: 20px;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.calendar-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.month-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--texto-claro);
+}
+
+.month-selector button {
+  background: var(--cor-secundaria);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  color: var(--texto-claro);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.month-selector button:hover {
+  background: var(--cor-primaria);
+}
+
+.month-selector h2 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  user-select: none;
+}
+
+.calendar-box {
+  background: rgba(255, 255, 255, 0.15); /* branco com transparência */
+  padding: 20px;
+  border-radius: 16px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  user-select: none;
+}
+
+.day {
+  background: var(--cinza-claro);
+  color: var(--texto-escuro);
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 transparent;
+  min-height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  overflow-wrap: break-word;
+}
+
+.day.disabled {
+  background: #bbb;
+  color: #666;
+  cursor: default;
+  box-shadow: none;
+}
+
+.day.selected {
+  background: var(--cor-primaria);
+  color: var(--texto-claro);
+  box-shadow: 0 0 10px var(--sombra-light);
+}
+
+.appointments-inside {
+  margin-top: 4px;
+  font-size: 0.6rem;
+  color: var(--cor-secundaria);
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.side-panel {
+  flex-basis: 380px;
+  background: var(--cor-secundaria);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px var(--sombra-dark);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: var(--texto-claro);
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+.side-panel h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#appointments-list {
+  flex: 1;
+  overflow-y: auto;
+  background: var(--cor-primaria);
+  padding: 1rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  box-shadow: inset 0 0 10px var(--sombra-dark);
+}
+
+#appointments-list p {
+  margin-bottom: 0.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input, button {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+input {
+  background: var(--cinza-claro);
+  color: var(--texto-escuro);
+}
+
+button {
+  background: var(--cor-primaria);
+  color: var(--texto-claro);
+  cursor: pointer;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background: var(--cor-secundaria);
+}
+
+/* Popup */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: var(--cor-primaria);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 12px 32px var(--sombra-dark);
+  z-index: 10;
+  transition: transform 0.3s ease;
+  text-align: center;
+  color: var(--texto-claro);
+  min-width: 300px;
+}
+
+.popup.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.popup button {
+  margin-top: 1rem;
+  background: var(--cinza-claro);
+  color: var(--texto-escuro);
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+}
+/* Hover nos dias do calendário */
+#calendar .day:not(.disabled):hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover no dia selecionado */
+#calendar .day.selected:hover {
+  background-color: #7a6443;
+  color: #fff;
+}
+
+/* Hover nos botões de edição e exclusão */
+#appointments-list button:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Hover nos botões de navegação do mês */
+#prev-month:hover,
+#next-month:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover no botão submit do formulário */
+#appointment-form button[type="submit"]:hover {
+  background-color: #5d4726;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}

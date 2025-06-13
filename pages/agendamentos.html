@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="description" content="Sistema para Giovana Perini" />
+    <meta name="keywords" content="Giovana Perini, sistema, web application" />
+    <meta name="author" content="Giovana Perini" />
+
+    <!-- ICON PAGE -->
+    <link rel="icon" href="/assets/icon.png" type="image/x-icon" />
+
+    <!-- Font Aweasome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>GP Sys</title>
+    <link rel="stylesheet" href="/src/css/agendamentos.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="/assets/icon.png" alt="Logo GP Sys" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/pages/dashboard.html">Dashboard</a></li>
+          <li><a href="/pages/agendamentos.html">Agendamentos</a></li>
+          <li><a href="/pages/cursos.html">Cursos</a></li>
+          <li><a href="/pages/contact.html">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+      <div class="calendar-section">
+        <div class="month-selector">
+          <button id="prev-month">&lt;</button>
+          <h2 id="month-year"></h2>
+          <button id="next-month">&gt;</button>
+        </div>
+
+        <div class="calendar-box">
+          <div id="calendar" class="calendar"></div>
+        </div>
+      </div>
+
+      <div class="side-panel">
+        <h2>Agendamentos do Dia</h2>
+        <div id="appointments-list">
+          Selecione um dia para ver os agendamentos.
+        </div>
+
+        <form id="appointment-form">
+          <h2>Detalhes do Agendamento</h2>
+          <input type="text" id="nome" placeholder="Nome da Cliente" required />
+          <input type="time" id="horario" required />
+          <input
+            type="number"
+            id="valor"
+            placeholder="Valor da Sessão (R$)"
+            required
+          />
+          <input type="hidden" id="editing-index" value="" />
+          <button type="submit">Agendar</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup" id="popup">
+      <p id="popup-text"></p>
+      <button onclick="closePopup()">OK</button>
+    </div>
+
+    <script src="/src/js/agendamentos.js"></script>
+  </body>
+</html>
