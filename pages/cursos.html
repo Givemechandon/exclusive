@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="description" content="ERP Cursos Lash Designer" />
+    <meta name="keywords" content="ERP, Cursos, Lash Designer, sistema" />
+    <meta name="author" content="Giovana Perini" />
+    <link rel="icon" href="/assets/icon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/src/css/cursos.css" />
+    <link rel="stylesheet" href="/src/css/reset.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Cursos | GP Sys</title>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <div class="cursos-container">
+        <div class="cursos-header">
+          <h1>Cursos</h1>
+          <button id="btn-add-curso">
+            <i class="fa fa-plus"></i> Adicionar Curso
+          </button>
+        </div>
+        <div id="cursos-lista" class="cursos-lista"></div>
+      </div>
+    </main>
+    <div id="modal-curso" class="modal-curso-bg" style="display: none">
+      <div class="modal-curso">
+        <h2>Novo Curso</h2>
+        <form id="form-curso">
+          <label
+            >Nome do curso:
+            <input type="text" id="curso-nome" required />
+          </label>
+          <label
+            >Valor (R$):
+            <input
+              type="number"
+              id="curso-valor"
+              min="0"
+              step="0.01"
+              required
+            />
+          </label>
+          <label
+            >Duração (horas):
+            <input type="number" id="curso-duracao" min="1" step="1" required />
+          </label>
+          <label
+            >Módulos (separados por vírgula):
+            <input type="text" id="curso-modulos" required />
+          </label>
+          <div class="modal-curso-actions">
+            <button type="submit" class="btn-salvar">Salvar</button>
+            <button type="button" class="btn-cancelar" id="fechar-modal-curso">
+              Cancelar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="reserved"></div>
+    <script src="/src/js/include-header-footer.js"></script>
+    <script src="/src/js/cursos.js"></script>
+  </body>
+</html>

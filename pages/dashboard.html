@@ -9,7 +9,7 @@
     <meta name="author" content="Giovana Perini" />
 
     <!-- STYLE CSS -->
-    <link rel="stylesheet" href="/src/css/contact.css" />
+    <link rel="stylesheet" href="/src/css/dashboard.css" />
     <link rel="stylesheet" href="/src/css/reset.css" />
 
     <!-- ICON PAGE -->
@@ -40,28 +40,34 @@
         </ul>
       </nav>
     </header>
-
     <main>
-      <div class="container">
-        <div class="card">
-          <img src="/assets/fotodev.jpg" alt="foto do dev" />
-          <h2>Dev Bruno Correia</h2>
-          <p>Desenvolvedor Full Stack</p>
-          <div class="social-media">
-            <a
-              href="https://www.linkedin.com/in/bruno-c%C3%A9sar-correia-a0bab5186/"
-              target="_blank"
-              ><i class="fa-brands fa-linkedin-in"></i
-            ></a>
-            <a href="https://github.com/Givemechandon" target="_blank"
-              ><i class="fa-brands fa-github"></i
-            ></a>
-            <a href="https://wa.me/5511950315355" target="_blank"
-              ><i class="fa-solid fa-phone"></i
-            ></a>
-            <a href="mailto:brunomalachias2015@gmail.com" target="_blank"
-              ><i class="fa-solid fa-inbox"></i
-            ></a>
+      <div class="dashboard-container">
+        <div class="dashboard-cards">
+          <div class="dashboard-card" id="total-recebido" data-icon="\f155">
+            <h3>Total Recebido</h3>
+            <p class="valor">R$ 0,00</p>
+          </div>
+          <div class="dashboard-card" id="total-clientes" data-icon="\f0c0">
+            <h3>Total de Clientes</h3>
+            <p class="valor">0</p>
+          </div>
+          <div class="dashboard-card" id="pix-cpf" data-icon="\f6a6">
+            <h3>Recebido em PIX CPF</h3>
+            <p class="valor">R$ 0,00</p>
+          </div>
+          <div class="dashboard-card" id="pix-cnpj" data-icon="\f1ad">
+            <h3>Recebido em PIX CNPJ</h3>
+            <p class="valor">R$ 0,00</p>
+          </div>
+        </div>
+        <div class="dashboard-ranking-grafico">
+          <div class="dashboard-ranking">
+            <h3>Ranking de Clientes</h3>
+            <ol id="ranking-clientes"></ol>
+          </div>
+          <div class="dashboard-grafico">
+            <h3>Movimento por Dia</h3>
+            <ul id="lista-movimento"></ul>
           </div>
         </div>
       </div>
@@ -72,6 +78,8 @@
         Correia
       </p>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/src/js/dashboard.js"></script>
     <script src="/src/js/include-header-footer.js"></script>
   </body>
 </html>

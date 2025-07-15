@@ -1,0 +1,313 @@
+:root {
+  --cor-primaria: #8b6e52;
+  --cor-secundaria: #a98c6f;
+  --texto-claro: #f9f6f1;
+  --texto-escuro: #3b2f2f;
+  --cinza-claro: #d7cfc3;
+  --sombra-dark: rgba(0, 0, 0, 0.18);
+}
+
+body {
+  background-image: url(/assets/fundo.jpg);
+  color: var(--texto-claro);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.cursos-container {
+  max-width: 1100px;
+  margin: 2rem auto 2rem auto;
+  padding: 2rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px 0 var(--sombra-dark);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  flex: 1;
+}
+
+.cursos-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.cursos-header h1 {
+  font-size: 2rem;
+  color: var(--texto-claro);
+}
+
+#btn-add-curso {
+  background: var(--cor-primaria);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.3rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+#btn-add-curso:hover {
+  background: var(--cor-secundaria);
+}
+
+.cursos-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.curso-card {
+  background: var(--cinza-claro);
+  color: var(--texto-escuro);
+  border-radius: 14px;
+  box-shadow: 0 2px 10px var(--sombra-dark);
+  padding: 1.2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+}
+
+.curso-card .curso-actions {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+.curso-card .curso-actions button {
+  background: var(--cor-primaria);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 0.7rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.curso-card .curso-actions button:hover {
+  background: var(--cor-secundaria);
+}
+
+.curso-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  align-items: center;
+  font-size: 1rem;
+}
+.curso-info span {
+  background: rgba(139, 110, 82, 0.08);
+  border-radius: 6px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.98rem;
+}
+
+.curso-modulos {
+  margin: 0.5rem 0 0.5rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.curso-modulo {
+  background: var(--cor-primaria);
+  color: #fff;
+  border-radius: 6px;
+  padding: 0.2rem 0.7rem;
+  font-size: 0.95rem;
+}
+
+.curso-alunos {
+  margin-top: 0.7rem;
+}
+.curso-alunos h4 {
+  margin-bottom: 0.3rem;
+  font-size: 1.05rem;
+  color: var(--cor-primaria);
+}
+.curso-alunos-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.aluno-item {
+  background: rgba(139, 110, 82, 0.08);
+  border-radius: 6px;
+  padding: 0.5rem 0.7rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  align-items: center;
+}
+.aluno-item input[type="text"],
+.aluno-item input[type="date"],
+.aluno-item input[type="number"] {
+  border: none;
+  border-radius: 5px;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.97rem;
+  background: #fff;
+  color: var(--texto-escuro);
+  width: 120px;
+}
+.aluno-item input[type="number"] {
+  width: 80px;
+}
+.aluno-item label {
+  font-size: 0.95rem;
+  color: var(--cor-primaria);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  transition: transform 0.6s ease;
+}
+
+header .logo img:hover {
+  transform: scale(1.1);
+}
+
+header nav ul {
+  list-style: none;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 18px;
+  padding: 0;
+  margin: 20px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.4s ease;
+  padding: 10px 16px;
+  border-radius: 8px;
+}
+
+header nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.reserved {
+  margin-top: auto;
+  position: static;
+  text-align: center;
+  width: fit-content;
+  color: #fff;
+  font-size: 12px;
+  opacity: 0.7;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.modal-curso-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-curso {
+  background: var(--cinza-claro);
+  color: var(--texto-escuro);
+  border-radius: 14px;
+  box-shadow: 0 4px 32px var(--sombra-dark);
+  padding: 2rem 2.2rem 1.5rem 2.2rem;
+  min-width: 320px;
+  max-width: 95vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  position: relative;
+}
+.modal-curso h2 {
+  margin-bottom: 0.5rem;
+  color: var(--cor-primaria);
+  font-size: 1.3rem;
+  text-align: center;
+}
+.modal-curso label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 1rem;
+  color: var(--cor-primaria);
+}
+.modal-curso input[type="text"],
+.modal-curso input[type="number"] {
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 0.7rem;
+  font-size: 1rem;
+  background: #fff;
+  color: var(--texto-escuro);
+  margin-top: 0.1rem;
+}
+.modal-curso-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+.btn-salvar {
+  background: var(--cor-primaria);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-salvar:hover {
+  background: var(--cor-secundaria);
+}
+.btn-cancelar {
+  background: #fff;
+  color: var(--cor-primaria);
+  border: 1.5px solid var(--cor-primaria);
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-cancelar:hover {
+  background: var(--cor-primaria);
+  color: #fff;
+}
+
+@media (max-width: 700px) {
+  .cursos-lista {
+    grid-template-columns: 1fr;
+  }
+  .cursos-container {
+    padding: 0.5rem;
+  }
+}
